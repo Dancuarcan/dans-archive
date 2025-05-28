@@ -1,0 +1,309 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: white; 
+    font-weight: 400;
+    font-family: ivyepic, sans-serif;
+    font-style: normal;
+    color: black;
+  }
+  
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem;
+    z-index: 1000;
+  }
+  
+  .nav h1 {
+    font-size: 1.2rem; 
+    font-weight: 600;
+    text-align: start;
+  }
+  
+  .nav .description {
+    font-weight: 600;
+    text-align: start;
+  }
+
+
+  .info-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  
+
+  .info-button {
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: black;
+    transition: opacity 0.2s ease;
+  }
+  
+  .info-button:hover {
+    opacity: 0.6;
+  }
+  
+  .info-panel {
+    height: 0;
+    overflow: hidden;
+    text-align: left;
+    width: 25vw;
+    font-size: 1rem;
+    line-height: 1.4;
+    max-width: 600px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  }
+
+  .info-panel p {
+    margin-top: 1rem;
+  }
+
+  .info-panel.show {
+    transform: translateY(0px);
+    margin-bottom: 1rem;
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .links-personales {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+  }
+
+   .links-personales a{
+    color: #313131;
+    margin-right: 2rem;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 8rem;
+    transition: margin-top 0.001s ease;
+  }
+
+  main.info-visible {
+    margin-top: calc(18rem + 6rem); 
+  }
+  
+  .project-row {
+    display: grid;
+    grid-template-columns: 6fr 1fr 1fr;
+    align-items: center;
+    position: relative;
+    padding: 0.5rem 1rem;
+    border-top: 1px solid #313131;
+  }
+  
+  .project-row.header {
+    font-weight: bold;
+    border-top: none;
+    background-color: white;
+    position: relative;
+    z-index: 10;
+  }
+
+  /* Sortable header links */
+  .project-row.header a.sortable {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    transition: opacity 0.2s;
+  }
+
+  .project-row.header a.sortable:nth-child(3) {
+    justify-self: end;
+    text-align: right;
+  }
+  
+  .project-row.header a.sortable:hover {
+    text-decoration: underline;
+    opacity: 0.7;
+  }
+  
+
+  .project-row span:nth-child(3) {
+    justify-self: end;
+    text-align: right;
+  }
+  
+  .project-title {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    position: relative;
+  }
+  
+  .project-row .hover-preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: none;
+    z-index: 10;
+  }
+  
+  .project-row:not(.header):hover {
+    background-color: black;
+    color: white;
+  }
+  
+  .project-row:not(.header):hover a {
+    color: white;
+  }
+  
+  .project-row:hover .hover-preview {
+    display: block;
+  }
+  
+  .project-list {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Floating preview video */
+  .hover-preview {
+    position: fixed;
+    top: 100px; 
+    left: 300px;
+    min-width: 300px;
+    max-width: 25vw;
+    z-index: 100;
+    display: none;
+    pointer-events: none;
+    z-index: 1000000;
+  }
+  
+  
+  .hover-preview video {
+    width: 100%;
+    height: auto;
+    display: block;
+    z-index: 1000000;
+  }
+  
+  .sound-button {
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 1.2rem; 
+    font-weight: 600;
+    cursor: pointer;
+    color: black;
+    transition: opacity 0.2s ease;
+  }
+  
+  .sound-button:hover {
+    opacity: 0.6;
+  }
+  
+  .sound-button.active {
+    color: red;
+  }
+
+
+
+
+  /* Responsive */
+
+@media (max-width: 1180px) {
+  .project-row {
+    grid-template-columns: 5fr 2fr 1fr;
+  }
+
+}
+
+@media (max-width: 900px) {
+  .project-row {
+    grid-template-columns: 4fr 3fr 1fr;
+  }
+
+}
+
+@media (max-width: 700px) {
+  .project-row {
+    grid-template-columns: 1fr 1fr; /* Now only Archivo and Fecha */
+  }
+
+  .project-row span:nth-child(2) {
+    display: none;
+  }
+
+   /* Disable fixed/floating preview */
+  .hover-preview {
+    display: none;
+  }
+
+  /* Add in-row video container */
+  .project-row .inline-preview {
+    display: block;
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+
+  .project-row .inline-preview video {
+    width: 100%;
+    height: auto;
+  }
+
+  .inline-preview {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .inline-preview video {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  #hoverPreview {
+    display: none !important;
+  }
+
+    .project-row:not(.header):hover {
+    background-color: white;
+    color: #313131;
+  }
+  
+  .project-row:not(.header):hover a {
+    color: #313131;
+  }
+
+
+}

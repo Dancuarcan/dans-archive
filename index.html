@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dan's Archive</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://use.typekit.net/gmu7dsm.css">
+</head>
+<body>
+
+    <header class="nav">
+        <h1 class="description">Un creativo en proceso - portafolio de práctica Dan x Folk</h1>
+      
+        <div class="info-container">
+          <button id="infoToggle" class="info-button">Info</button>
+          <div id="infoPanel" class="info-panel hidden">
+            <p>Este es un archivador de piezas de animación  realizadas en mi práctica con Folk Estudio.</p>
+            <p class="instrucciones">Para poder visualizar debes poner el mouse encima de la fila de un proyecto (Tocar si estás en móvil).</p>
+            <p>Soy un diseñador y artista multidisciplinario que siempre desea seguir aprendiendo.</p>
+            <p>NOTA: la página todavía está en construcción, puede tener algunos bugs.</p>
+            <div class="links-personales">
+              <a href="https://www.instagram.com/dancuar/" target="_blank">Instagram</a>
+              <a href="https://www.dancuar.com/" target="_blank">Website</a>
+              <a href="mailto:dancuar.design@gmail.com" target="_blank">Mail</a>
+            </div>
+          </div>
+        </div>
+      
+        <button id="soundToggle" class="sound-button">Sonido: Off</button>
+    </header>
+
+  <main>
+    <!-- Column headers outside .project-list -->
+    <div class="project-row header">
+        <a id="sortByName" href="#" class="sortable" data-label="Archivo">Archivo</a>
+        <span>Cliente / proyecto</span>
+        <a id="sortByDate" href="#" class="sortable" data-label="Fecha">Fecha</a>
+    </div>
+  
+    <!-- Dynamic rows go here -->
+    <div class="project-list"></div>
+  </main>
+
+  <div class="hover-preview" id="hoverPreview">
+    <video id="previewVideo" muted autoplay loop playsinline></video>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

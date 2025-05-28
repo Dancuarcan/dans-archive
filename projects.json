@@ -1,0 +1,51 @@
+[
+    {
+      "title": "Flyer_week 1",
+      "client": "Cocodrilo",
+      "date": "27/11/2024",
+      "video": "assets/videos/project1.mp4"
+    },
+    {
+      "title": "Flyer_week 1",
+      "client": "Cocodrilo",
+      "date": "28/11/2024",
+      "video": "assets/videos/project2.mp4"
+    },
+    {
+      "title": "Flyer_week 1",
+      "client": "Cocodrilo",
+      "date": "29/11/2024",
+      "video": "assets/videos/project3.mp4"
+    },
+    {
+      "title": "Flyer_week 1",
+      "client": "Cocodrilo",
+      "date": "30/11/2024",
+      "video": "assets/videos/project4.mp4"
+    },
+    {
+      "title": "Flyer_week 2",
+      "client": "Cocodrilo",
+      "date": "30/01/2025",
+      "video": "assets/videos/project5.mp4"
+    },
+    {
+      "title": "Flyer_week 2",
+      "client": "Cocodrilo",
+      "date": "31/01/2025",
+      "video": "assets/videos/project6.mp4"
+    },
+    {
+      "title": "Flyer_week 2",
+      "client": "Cocodrilo",
+      "date": "01/02/2025",
+      "video": "assets/videos/project7.mp4"
+    },
+    {
+      "title": "Flyer_week 3",
+      "client": "Cocodrilo",
+      "date": "06/02/2025",
+      "video": "assets/videos/project8.mp4"
+    }
+
+]
