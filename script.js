@@ -20,6 +20,7 @@ const infoToggle = document.getElementById('infoToggle');
 const infoPanel = document.getElementById('infoPanel');
 const main = document.querySelector('main');
 
+
 infoToggle.addEventListener('click', () => {
   infoPanel.classList.toggle('show');
   main.classList.toggle('info-visible'); // 👈 Shift main content
@@ -105,6 +106,26 @@ function renderProjects(projects) {
       openInlinePreview = inlineContainer;
     }
     });
+
+    const infoTrigger = document.getElementById('info-trigger');
+    const infoPanel = document.getElementById('info-panel');
+    const closeInfo = document.getElementById('close-info');
+
+  infoTrigger.addEventListener('click', () => {
+    infoPanel.classList.remove('hidden');
+  });
+
+  closeInfo.addEventListener('click', () => {
+    infoPanel.classList.add('hidden');
+  });
+
+  // Optional: close on clicking outside the panel content
+  infoPanel.addEventListener('click', (e) => {
+    if (e.target === infoPanel) {
+      infoPanel.classList.add('hidden');
+    }
+  });
+
 
     // 🖱️ DESKTOP: Hover preview (floating)
     row.addEventListener('mouseenter', () => {
@@ -251,6 +272,8 @@ document.getElementById('sortByName').addEventListener('click', (e) => {
   e.preventDefault();
   sortByName();
 });
+
+
 
 // 🖱️ Follow mouse for preview video
 let targetX = 0, targetY = 0;

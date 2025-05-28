@@ -32,6 +32,8 @@
   }
   
   .nav .description {
+    min-width: 250px;
+    width: 40vw;
     font-weight: 600;
     text-align: start;
   }
@@ -40,9 +42,9 @@
   .info-container {
     position: relative;
     display: inline-block;
+    min-width: 200px;
   }
 
-  
 
   .info-button {
     background: none;
@@ -63,6 +65,7 @@
     height: 0;
     overflow: hidden;
     text-align: left;
+    min-width: 300px;
     width: 25vw;
     font-size: 1rem;
     line-height: 1.4;
@@ -84,6 +87,46 @@
     opacity: 1;
     visibility: visible;
   }
+
+  #info-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#info-panel.hidden {
+  display: none;
+}
+
+.info-content {
+  background: white;
+  color: black;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+#close-info {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 
   .links-personales {
     margin-top: 2rem;
@@ -236,7 +279,36 @@
     color: red;
   }
 
+  /* footer */
+  .contact-footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  display: none; /* Hidden on desktop */
+  padding: 1rem;
+  background: #fff;
+  border-top: 1px solid #ccc;
+}
 
+.contact-footer .contact-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.contact-footer .contact-info a,
+.contact-footer .contact-info button {
+  text-decoration: none;
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #000;
+}
 
 
   /* Responsive */
@@ -252,10 +324,59 @@
   .project-row {
     grid-template-columns: 4fr 3fr 1fr;
   }
+  nav .contact-info {
+    display: none;
+  }
+
+  .contact-footer {
+    display: block;
+  }
+
+  .nav .info-container {
+    display: none;
+  }
+
+  main.info-visible {
+    margin-top: 8rem; 
+  }
+
+  .info-panel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    color: black;
+    padding: 1rem;
+    max-width: 90%;
+    width: fit-content;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+    z-index: 9999;
+    text-align: center;
+  }
+
+  
+  .info-panel.show {
+    display: block
+  }
+
+  .nav .info-container .info-panel.show {
+    display: block;
+  }
 
 }
 
 @media (max-width: 700px) {
+
+
+  .nav .description {
+    width: 10px;
+    font-weight: 600;
+    text-align: start;
+  }
+
+
   .project-row {
     grid-template-columns: 1fr 1fr; /* Now only Archivo and Fecha */
   }
@@ -271,6 +392,7 @@
 
   /* Add in-row video container */
   .project-row .inline-preview {
+    position: relative;
     display: block;
     margin-top: 0.5rem;
     width: 100%;
@@ -282,8 +404,9 @@
   }
 
   .inline-preview {
-    margin-top: 10px;
     width: 100%;
+    grid-column: 1 / -1; /* Span full width */
+    margin-top: 0.5rem;
   }
 
   .inline-preview video {

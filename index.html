@@ -9,41 +9,61 @@
 </head>
 <body>
 
-    <header class="nav">
-        <h1 class="description">Un creativo en proceso - portafolio de práctica Dan x Folk</h1>
-      
-        <div class="info-container">
-          <button id="infoToggle" class="info-button">Info</button>
-          <div id="infoPanel" class="info-panel hidden">
-            <p>Este es un archivador de piezas de animación  realizadas en mi práctica con Folk Estudio.</p>
-            <p class="instrucciones">Para poder visualizar debes poner el mouse encima de la fila de un proyecto (Tocar si estás en móvil).</p>
-            <p>Soy un diseñador y artista multidisciplinario que siempre desea seguir aprendiendo.</p>
-            <p>NOTA: la página todavía está en construcción, puede tener algunos bugs.</p>
-            <div class="links-personales">
-              <a href="https://www.instagram.com/dancuar/" target="_blank">Instagram</a>
-              <a href="https://www.dancuar.com/" target="_blank">Website</a>
-              <a href="mailto:dancuar.design@gmail.com" target="_blank">Mail</a>
-            </div>
-          </div>
+  <header class="nav">
+    <h1 class="description">Un creativo en proceso - portafolio de práctica Dan x Folk</h1>
+
+    <div class="info-container">
+      <button id="infoToggle" class="info-button">Info</button>
+      <div id="infoPanel" class="info-panel">
+        <p>Este es un archivador de piezas de animación realizadas en mi práctica con Folk Estudio.</p>
+        <p class="instrucciones">Para poder visualizar debes poner el mouse encima de la fila de un proyecto (Tocar si estás en móvil).</p>
+        <p>Soy un diseñador y artista multidisciplinario que siempre desea seguir aprendiendo.</p>
+        <p>NOTA: la página todavía está en construcción, puede tener algunos bugs.</p>
+        <div class="links-personales">
+          <a href="https://www.instagram.com/dancuar/" target="_blank">Instagram</a>
+          <a href="https://www.dancuar.com/" target="_blank">Website</a>
+          <a href="mailto:dancuar.design@gmail.com" target="_blank">Mail</a>
         </div>
-      
-        <button id="soundToggle" class="sound-button">Sonido: Off</button>
-    </header>
+      </div>
+    </div>
+
+    <button id="soundToggle" class="sound-button">Sonido: Off</button>
+  </header>
 
   <main>
     <!-- Column headers outside .project-list -->
     <div class="project-row header">
-        <a id="sortByName" href="#" class="sortable" data-label="Archivo">Archivo</a>
-        <span>Cliente / proyecto</span>
-        <a id="sortByDate" href="#" class="sortable" data-label="Fecha">Fecha</a>
+      <a id="sortByName" href="#" class="sortable" data-label="Archivo">Archivo</a>
+      <span>Cliente / proyecto</span>
+      <a id="sortByDate" href="#" class="sortable" data-label="Fecha">Fecha</a>
     </div>
-  
+
     <!-- Dynamic rows go here -->
     <div class="project-list"></div>
   </main>
 
   <div class="hover-preview" id="hoverPreview">
     <video id="previewVideo" muted autoplay loop playsinline></video>
+  </div>
+
+  <footer class="contact-footer">
+    <div class="contact-info">
+      <button id="info-trigger">Info</button>
+      <a href="https://www.instagram.com/dancuar/" target="_blank">Instagram</a>
+      <a href="https://www.dancuar.com/" target="_blank">Website</a>
+      <a href="mailto:dancuar.design@gmail.com" target="_blank">Mail</a>
+    </div>
+  </footer>
+
+  <!-- Fullscreen Info Panel (hidden by default) -->
+  <div id="info-panel" class="hidden">
+    <div class="info-content">
+      <button id="close-info">✕</button>
+      <p>Este es un archivador de piezas de animación realizadas en mi práctica con Folk Estudio.</p>
+      <p class="instrucciones">Para poder visualizar debes poner el mouse encima de la fila de un proyecto (Tocar si estás en móvil).</p>
+      <p>Soy un diseñador y artista multidisciplinario que siempre desea seguir aprendiendo.</p>
+      <p>NOTA: la página todavía está en construcción, puede tener algunos bugs.</p>
+    </div>
   </div>
 
   <script src="script.js"></script>
