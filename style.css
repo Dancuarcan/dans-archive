@@ -234,6 +234,7 @@
   .project-list {
     display: flex;
     flex-direction: column;
+    margin-bottom: 500px;
   }
   
   /* Floating preview video */
@@ -317,6 +318,12 @@
   .project-row {
     grid-template-columns: 5fr 2fr 1fr;
   }
+    .hover-preview {
+
+    top: 100px; 
+    left: 200px;
+  }
+  
 
 }
 
